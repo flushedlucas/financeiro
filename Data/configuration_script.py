@@ -164,7 +164,7 @@ codbi_list = [
 
 def insert_tpmerc(element):
     cursor = mydb.cursor(buffered=True)
-    query = ("INSERT INTO cotacoes_Bovespa.TPMerc (Description, Code) VALUES (%s,%s)")
+    query = ("INSERT INTO cotacoes_Bovespa.TPMerc (Code, Description) VALUES (%s,%s)")
     cursor.execute(query, (element[0], element[1]))
     mydb.commit()
     return
@@ -191,17 +191,17 @@ def insert_codbi(element):
     mydb.commit()
     return
 
-for i in tpmerc_list:
-    insert_tpmerc(i)
+# for i in tpmerc_list:
+#     insert_tpmerc(i)
 
-for i in especi_list:
-    insert_especi(i)
+# for i in especi_list:
+#     insert_especi(i)
 
-for i in codbi_list:
-    insert_codbi(i)
+# for i in codbi_list:
+#     insert_codbi(i)
 
-for i in indopc_list:
-    insert_indopc(i)
+# for i in indopc_list:
+#     insert_indopc(i)
 
 
 print("Acabou")
